@@ -1,0 +1,193 @@
+body {
+    font-family: "PT Sans Caption", sans-serif;
+    background-color: #F7ECDE;
+    color: #212529;
+    position: relative;
+}
+::selection {
+    background-color: #FEC260;
+    color: #352e28;
+}
+main {
+    padding: 2.5rem 0;
+}
+ul {
+    list-style: none;
+}
+/* warning message */
+.invalid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+.warning-message {
+    background-color: #FFFFFF;
+    padding: 20px 15px;
+    max-width: 500px;
+}
+.warning-message .w-head .dots {
+    display: flex;
+    gap: 10px;
+}
+.warning-message .w-head .dots .dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.warning-message .w-head .dots .dot.red {
+    background-color: #F15F5D;
+}
+.warning-message .w-head .dots .dot.orange {
+    background-color: #FEBE2E;
+}
+.warning-message .w-head .dots .dot.green {
+    background-color: #4DB748;
+}
+.warning-message .w-head .icon i{
+    font-size: 1.5rem;
+}
+.warning-message .w-body h3 {
+    font-size: 1.3125rem;
+    font-family: "Bree Serif", serif;
+    color: #352e28;
+    margin-top: 1.25rem;
+}
+.warning-message .w-body ul{
+    margin-top: 1.5625rem;
+}
+.warning-message .w-body ul li {
+    font-size: 1.125rem;
+    margin-top: .9375rem;
+}
+.warning-message .w-body ul li i {
+    color: #bb4120;
+}
+/* frame work */
+input.is-valid:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px green !important;
+    border-color: green !important;
+}
+input.is-invalid:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px red !important;
+    border-color: red !important;
+}
+/* header */
+header .container{
+    border-bottom: 2px dotted #000;
+    padding-bottom: 3rem;
+}
+header h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 3.125rem;
+    font-weight: 500;
+    /* background-color: #FEC260; */
+    width: fit-content;
+    margin: auto;
+    position: relative;
+}
+header h1::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -25px;
+    background-color: #FEC260;
+    z-index: -1;
+    transition: width 0.5s 0.3s, height 0.5s 0.3s, right 0.3s, border-radius 0.5s 0.3s;
+}
+header h1:hover::before {
+    right: 0;
+}
+header h1::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
+    background-color: #FEC260;
+    z-index: -1;
+    transition: width 0.5s 0.3s, height 0.5s 0.3s, left 0.3s, border-radius 0.5s 0.3s;
+}
+header h1:hover::after{
+    left: 0;
+}
+header h1:hover::before, 
+header h1:hover::after 
+{
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+}
+/* form */
+#form .form .container {
+    border-bottom: 2px dotted #000;
+    padding: 2rem 0;
+}
+#form .form h2 {
+    width: fit-content;
+    margin: auto;
+    font-size: 1.5625rem;
+    font-weight: 500;
+    font-family: "Righteous", sans-serif;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#form .form .inputs {
+    margin-top: 1.875rem;
+}
+#form .form .inputs label {
+    font-weight: 600;
+    font-family: inherit;
+}
+#form .form .inputs input:focus {
+    border-color: #FEC260;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FEC260;
+}
+#form .form .inputs button {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d1512d;
+    --bs-btn-border-color: #d1512d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb4120;
+    --bs-btn-hover-border-color: #a03315;
+    padding: .375rem 3.125rem;
+}
+/* table */
+#table-content .table-content table {
+    font-family: "PT Sans", sans-serif;
+    color: #212529;
+    vertical-align: center;
+}
+#table-content .table-content table {
+    vertical-align: middle;
+}
+#table-content .table-content table a.green-color-btn {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #9eb23b;
+    --bs-btn-border-color: #9eb23b;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #8a9e23;
+    --bs-btn-hover-border-color: #6e8018;
+}
+#table-content .table-content table button.red-color-btn {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #eb1d36;
+    --bs-btn-border-color: #eb1d36;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d30820;
+    --bs-btn-hover-border-color: #ba081d;
+}
